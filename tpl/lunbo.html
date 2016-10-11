@@ -1,0 +1,71 @@
+<div>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        li,ul{
+            list-style: none;
+            margin:0px;
+            padding:0px;
+        }
+        .bigbox{
+            width:750px;
+            height:291px;
+            margin:0 auto;
+            position: relative;
+            font-size: 200px;
+            text-align: center;
+            line-height: 291px;
+            overflow: hidden;
+        }
+        .bannerbox{
+            width:3750px;
+            height: 100%;
+            transition: all 1s ease;
+        }
+        .banner{
+            width:750px;
+            height:291px;
+            float: left;
+            border: 1px solid red;
+        }
+        .btnbox{
+            width:180px;
+            height:27px;
+            position: absolute;
+            right:5px;
+            bottom:0;
+        }
+        #btn{
+            width:20px;
+            height:20px;
+            margin-right:5px;
+            background:#000;
+            float:left;
+            border-radius:50%;
+            text-align:center;
+            line-height:20px;
+            z-index:2;
+            cursor:pointer;
+            font-size: 10px;
+            color: white;
+        }
+        #btn:hover{
+            background: red;
+        }
+        #btn.checked{
+            background: red;
+        }
+    </style>
+    <div class="bigbox">
+        <div class="bannerbox" ng-style="{marginLeft:-num*750+'px'}">
+          <div class="banner" ng-repeat="item in data">{{item.title}}</div>
+        </div>
+        <div class="btnbox">
+          <div id="btn" ng-repeat="item in data" ng-click="change($index)" ng-class="{checked:$index==num}">
+                {{item.title}}</div>
+        </div>
+    </div>
+</div>
